@@ -10,8 +10,12 @@ function TodoInput({addTodo}) {
     }  
     return (
         <div>
-            <input type="text" placeholder="Add a todo" />
-            {todo} {e=>setTodo(e.target.value)}
+            <input 
+                type="text" 
+                placeholder="Add a todo" 
+                value={todo}
+                onChange={(e) => setTodo(e.target.value)}
+            />
             <button onClick={handleChange}>Add</button> 
         </div>
     )
