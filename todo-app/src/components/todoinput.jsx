@@ -9,14 +9,16 @@ function TodoInput({addTodo}) {
        }    
     }  
     return (
-        <div>
+        <div className="input-container">
             <input 
+                className="todo-input"
                 type="text" 
-                placeholder="Add a todo" 
+                placeholder="What needs to be done?" 
                 value={todo}
                 onChange={(e) => setTodo(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleChange()}
             />
-            <button onClick={handleChange}>Add</button> 
+            <button className="btn btn-primary" onClick={handleChange}>Add</button> 
         </div>
     )
 }
